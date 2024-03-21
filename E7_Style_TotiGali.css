@@ -1,0 +1,188 @@
+:root {
+  --border-radius: 30px;
+  --blau_fosc: #2f27ce;
+  --blau_gris: #dedcff;
+  --blau_accent: #902fcc;
+  --blanc: #fbfbfe;
+  --negre: #050315;
+
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.body {
+  background: var(--blau_accent);
+  transition: background 5s ease-in;
+}
+
+.body:hover {
+  background: linear-gradient(to bottom, var(--blau_accent), var(--blau_fosc));
+}
+
+/*header - encapçalament*/
+.item1 {
+  grid-area: A;
+  color: var(--blanc);
+  position: sticky;
+  top: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: var(--border-radius);
+  z-index:2;
+  border: 5px dotted var(--blanc);
+}
+
+/*part central amb les cartes*/
+.item2 {
+  grid-area: B;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: transform 3s ease-in-out, filter 5s ease-in-out;
+}
+.item2:hover {
+  transform: rotateX(360deg);
+  filter: contrast(10);
+}
+
+.item3 {
+  grid-area: C;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: transform 1s;
+}
+.item3:hover {
+  transform: rotateZ(-360deg);
+  filter: grayscale(10);
+}
+
+.item4 {
+  grid-area: D;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#carta4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 10s linear; 
+}
+
+#carta4:hover h3, #carta4:hover h4, #carta4:hover p, #carta4:hover a {
+  transform: translateX(80px);
+}
+
+.item5 {
+  grid-area: E;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 1;
+  transition: transform 1s ease-in-out, filter 1s ease-in-out;
+}
+.item5:hover {
+  transform: translate(565px, 50px);
+  filter: grayscale(10);
+}
+
+.item6 {
+  grid-area: F;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: transform 0.5s ease-in-out, opacity 3s; 
+}
+.item6:hover {
+  transform: scale(1.1);
+  opacity: 0.0;
+}
+
+.item7 {
+  grid-area: G;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+} 
+
+#carta7 {
+  transition: background-color 3s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+#carta7:hover {
+  box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.8);
+  background-color: yellow;
+  filter: blur(2px);
+}
+
+/*footer*/
+
+.item8 {
+  grid-area: H;
+  color: var(--blanc);
+}
+
+/*Definició de la grid de tot el body*/
+
+.grid-container-layout {
+  display: grid;
+  grid-template-areas:
+    "A A A A A A" 
+    "B B C C D D" 
+    "E E F F G G" 
+    "H H H H H H"; 
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Formating of the main layout*/
+.grid-container-layout > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.card {
+  width: 400px;
+  border-radius: var(--border-radius);
+  border: black;
+  box-shadow: 0 4 px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: var(--blanc);
+  color: var(--blau_fosc);
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+.card-content {
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.card-content p {
+  margin-bottom: 15px;
+}
+.card-content a {
+  display: inline-block;
+  background-color: var(--blau_fosc);
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  color: var(--blanc); 
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.card-content a:hover {
+  background-color: var(--blau_gris);
+  transform: scale(1.5);
+  transition-delay: 0.5s;
+  color: var(--negre);
+}

@@ -127,8 +127,6 @@
   left: -15%;
   transform: translate(-50%, -50%); /* Centra la imatge completament */
   transform: scale(0.7);
-  opacity: 0;
-  transition: opacity 6s ease-in-out;
 }
 
 .card:hover {
@@ -142,8 +140,5 @@
 .card:hover .card_back {
   display: block; /* Fes que .card_back aparegui quan es passi el ratolí sobre .card */
 }
-
-.card:hover .card_back img {
-  opacity: 1;
-}
+  
 
